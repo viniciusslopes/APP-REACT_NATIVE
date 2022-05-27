@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Text ,View, TextInput, TouchableOpacity, TouchableNativeFeedback, Keyboard} from 'react-native';
 import style from '../Title/style';
 import ResultImc from './ResultImc/result'
-import styles, { FormContext } from "./style"
+import styles, { FormContext, FormInput, TextLabel } from "./style"
 import styled from 'styled-components/native';
 
 
@@ -36,24 +36,22 @@ export default () => {
 
 return (
     <TouchableNativeFeedback onPress={()=>{Keyboard.dismiss()}}>
-        <FormContext style={styles.formContext}>
-            <View style={styles.form}>
-                <Text style={styles.formLabel}>Altura:</Text>
-                <TextInput
-                    style={styles.input} 
+        <FormContext>
+            <Form>
+                <TextLabel>Altura:</TextLabel>
+                <FormInput
                     onChangeText={setHeight}
                     value={height}
                     placeholder='Ex. 1.75' 
                     keyboardType='numeric'>
-                    </TextInput>
-                    <Text style={styles.formLabel}>Peso:</Text>
-                    <TextInput 
-                    style={styles.input}
+                    </FormInput>
+                    <TextLabel>Peso:</TextLabel>
+                    <FormInput 
                     onChangeText={setWeigth}
                     value={weigth}
                     placeholder='Ex. 88.9' 
                     keyboardType='numeric'>
-                </TextInput>
+                </FormInput>
                     {/* <Button title={textButton} onPress={()=>validetionIMC()}></Button> */}
 
                 <TouchableOpacity 
@@ -64,7 +62,7 @@ return (
                     > 
                     <Text style={styles.textButtonCalculator}>{textButton}</Text>
                 </TouchableOpacity>
-            </View>
+            </Form>
             <ResultImc resultImc={imc} messageResultImc={messageImc}></ResultImc>
         </FormContext>
     </TouchableNativeFeedback>
