@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { Text ,View, TextInput, TouchableOpacity, TouchableNativeFeedback, Keyboard} from 'react-native';
 import style from '../Title/style';
 import ResultImc from './ResultImc/result'
-import styles from "./style"
+import styles, { FormContext } from "./style"
+import styled from 'styled-components/native';
 
 
 export default () => {
@@ -35,7 +36,7 @@ export default () => {
 
 return (
     <TouchableNativeFeedback onPress={()=>{Keyboard.dismiss()}}>
-        <View style={styles.formContext}>
+        <FormContext style={styles.formContext}>
             <View style={styles.form}>
                 <Text style={styles.formLabel}>Altura:</Text>
                 <TextInput
@@ -65,7 +66,7 @@ return (
                 </TouchableOpacity>
             </View>
             <ResultImc resultImc={imc} messageResultImc={messageImc}></ResultImc>
-        </View>
+        </FormContext>
     </TouchableNativeFeedback>
     );
 };

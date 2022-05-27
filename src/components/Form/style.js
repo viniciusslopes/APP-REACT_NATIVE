@@ -1,4 +1,17 @@
 import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+
+export const FormContext = styled.View`
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background-color: "#ffffff";
+    align-items: center;
+    margin-top: 50px;
+    border-top-left-radius:30px;
+    border-top-right-radius: 30px;
+`;
+
 
 const styles = StyleSheet.create({
     formContext:{
