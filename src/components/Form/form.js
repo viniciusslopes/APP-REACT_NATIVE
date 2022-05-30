@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { Text ,View, TextInput, TouchableOpacity, TouchableNativeFeedback, Keyboard} from 'react-native';
-import style from '../Title/style';
+// import style from '../Title/style';
 import ResultImc from './ResultImc/result'
-import styles, { FormContext, FormInput, TextLabel } from "./style"
-import styled from 'styled-components/native';
+import { ButtonCalculator, FormContext, Form, FormInput, TextButtonCalculator, TextLabel } from "./style"
+// import { FormContext,Form,TextLabel,FormInput,TextButtonCalculator,ButtonCalculator } from './style';
 
 
 export default () => {
@@ -54,14 +54,9 @@ return (
                 </FormInput>
                     {/* <Button title={textButton} onPress={()=>validetionIMC()}></Button> */}
 
-                <TouchableOpacity 
-                    style={styles.buttonCalculator}
-                        onPress={()=>{
-                            validetionIMC()
-                        }}
-                    > 
-                    <Text style={styles.textButtonCalculator}>{textButton}</Text>
-                </TouchableOpacity>
+                <ButtonCalculator onPress={()=>{validetionIMC()}}> 
+                    <TextButtonCalculator>{textButton}</TextButtonCalculator>
+                </ButtonCalculator>
             </Form>
             <ResultImc resultImc={imc} messageResultImc={messageImc}></ResultImc>
         </FormContext>

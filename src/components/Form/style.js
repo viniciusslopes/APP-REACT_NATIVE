@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+// import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 export const FormContext = styled.View`
@@ -32,6 +32,23 @@ export const FormInput = styled.TextInput`
     height: 40px;
     margin: 10px;
     padding-left: 10px;
+`;
+
+export const TextButtonCalculator = styled.Text`
+    font-size: 20px;
+    color: #ffffff;
+`;
+
+export const ButtonCalculator = styled.TouchableOpacity`
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: #FF0000;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-left: 12px;
+    margin-right: 30px;
 `;
 
 // const styles = StyleSheet.create({
